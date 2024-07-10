@@ -11,6 +11,7 @@ struct MealListView: View {
     @StateObject var mealViewModel = MealViewModel(fetchController: FetchController())
     
     @State var alphabetical: Bool = true
+    @State var favorited = [String]()
     
     var body: some View {
         NavigationStack {
@@ -19,7 +20,7 @@ struct MealListView: View {
                     List{
                         ForEach(mealViewModel.listMeals) { meal in
                             NavigationLink {
-                                MealDetailView(mealId: meal.mealId)
+                                MealDetailView(favorited: favorited.contains(meal.mealId), favoritedList: $favorited, mealId: meal.mealId)
                             } label: {
                                 HStack {
                                     AsyncImage(url: meal.mealImage) { img in
@@ -33,6 +34,12 @@ struct MealListView: View {
                                     
                                     Text(meal.mealName)
                                         .padding(.leading)
+                                    if favorited.contains(meal.mealId) {
+                                        Image(systemName: "star.fill")
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundStyle(.red)
+                                    }
                                 }
                             }
                         }
@@ -57,6 +64,11 @@ struct MealListView: View {
             }
         }.task {
             await mealViewModel.fetchMeal(category: "Dessert")
+        }
+        .onAppear {
+            if let ids = UserDefaults.standard.string(forKey: "favorite") {
+                favorited = ids.components(separatedBy: ",")
+            }
         }
     }
 }
