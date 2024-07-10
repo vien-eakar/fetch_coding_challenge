@@ -12,6 +12,8 @@
 		6B2AA6E32C3343F50092C5B4 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AA6E22C3343F50092C5B4 /* MealViewModel.swift */; };
 		6B2AA6E52C33491E0092C5B4 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AA6E42C33491E0092C5B4 /* MealDetailViewModel.swift */; };
 		6B2AA6E72C3352040092C5B4 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2AA6E62C3352040092C5B4 /* MealListView.swift */; };
+		6B8EF75B2C3D86A000E1E91C /* FetchControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8EF75A2C3D86A000E1E91C /* FetchControllerProtocol.swift */; };
+		6B8EF75D2C3D86EE00E1E91C /* FetchControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8EF75C2C3D86EE00E1E91C /* FetchControllerTest.swift */; };
 		6BCF08FA2C3329BD009336F9 /* dessertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCF08F92C3329BD009336F9 /* dessertApp.swift */; };
 		6BCF08FC2C3329BD009336F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCF08FB2C3329BD009336F9 /* ContentView.swift */; };
 		6BCF08FE2C3329BF009336F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCF08FD2C3329BF009336F9 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		6B2AA6E22C3343F50092C5B4 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		6B2AA6E42C33491E0092C5B4 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		6B2AA6E62C3352040092C5B4 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
+		6B8EF75A2C3D86A000E1E91C /* FetchControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerProtocol.swift; sourceTree = "<group>"; };
+		6B8EF75C2C3D86EE00E1E91C /* FetchControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchControllerTest.swift; sourceTree = "<group>"; };
 		6BCF08F62C3329BD009336F9 /* dessert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dessert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCF08F92C3329BD009336F9 /* dessertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dessertApp.swift; sourceTree = "<group>"; };
 		6BCF08FB2C3329BD009336F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 			path = MealDetail;
 			sourceTree = "<group>";
 		};
+		6B8EF7592C3D866E00E1E91C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				6B8EF75A2C3D86A000E1E91C /* FetchControllerProtocol.swift */,
+				6B8EF75C2C3D86EE00E1E91C /* FetchControllerTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		6BCF08ED2C3329BD009336F9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 		6BCF08F82C3329BD009336F9 /* dessert */ = {
 			isa = PBXGroup;
 			children = (
+				6B8EF7592C3D866E00E1E91C /* Test */,
 				6B1F392C2C343C8E002ECB97 /* MealDetail */,
 				6B1F392B2C343C6D002ECB97 /* MealList */,
 				6BCF090A2C332AAC009336F9 /* Api */,
@@ -185,11 +199,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8EF75B2C3D86A000E1E91C /* FetchControllerProtocol.swift in Sources */,
 				6B1F392A2C33AC00002ECB97 /* MealDetailView.swift in Sources */,
 				6BCF08FC2C3329BD009336F9 /* ContentView.swift in Sources */,
 				6BCF090C2C332AC5009336F9 /* FetchController.swift in Sources */,
 				6BCF090E2C332DB6009336F9 /* MealModel.swift in Sources */,
 				6B2AA6E72C3352040092C5B4 /* MealListView.swift in Sources */,
+				6B8EF75D2C3D86EE00E1E91C /* FetchControllerTest.swift in Sources */,
 				6BCF08FA2C3329BD009336F9 /* dessertApp.swift in Sources */,
 				6BCF09102C332DDC009336F9 /* MealDetailModel.swift in Sources */,
 				6B2AA6E52C33491E0092C5B4 /* MealDetailViewModel.swift in Sources */,

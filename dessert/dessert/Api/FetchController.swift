@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FetchController {
+struct FetchController: FetchControllerProtocol  {
     private let fetchMealURL = "https://themealdb.com/api/json/v1/1/filter.php?c=%@"
     private let fetchMealDetailUrl = "https://themealdb.com/api/json/v1/1/lookup.php?i=%@"
     

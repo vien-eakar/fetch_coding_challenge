@@ -11,6 +11,7 @@ struct MealModel: Codable, Identifiable {
     let mealName: String
     let mealId: String
     let mealImage: URL
+    var favorited: Bool = false
     
     var id: String { mealId }
     

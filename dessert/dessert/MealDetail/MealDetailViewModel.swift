@@ -12,9 +12,9 @@ class MealDetailViewModel: ObservableObject {
     @Published private(set) var status = Status.notStarted
     @Published private(set) var mealDetail: MealDetailModel!
     
-    private let fetchController: FetchController
+    private let fetchController: FetchControllerProtocol //FetchController
     
-    init(fetchController: FetchController) {
+    init(fetchController: FetchControllerProtocol) {
         self.fetchController = fetchController
     }
     

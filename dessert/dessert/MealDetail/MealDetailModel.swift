@@ -45,6 +45,9 @@ struct MealDetailModel: Codable {
         self.mealImage = try container.decode(URL.self, forKey: .mealImage)
         self.instructions = try container.decode(String.self, forKey: .instructions)
         
+        // check this food id is favarite or not
+        
+        
         var ingredients: [String] = []
         var measures: [String] = []
         

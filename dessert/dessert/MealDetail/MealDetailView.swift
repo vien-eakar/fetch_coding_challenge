@@ -10,6 +10,8 @@ import SwiftUI
 struct MealDetailView: View {
     
     @StateObject var mealDetailViewModel = MealDetailViewModel(fetchController: FetchController())
+    @State var favorited: Bool = false
+    @Binding var favoritedList: [String]
     
     let mealId: String
     
@@ -27,6 +29,24 @@ struct MealDetailView: View {
                                 ProgressView()
                             }.frame(width: geo.size.width)
                                 .clipShape(.rect(cornerSize: CGSize(width: 10, height: 10)))
+                            HStack {
+                                Text("Favorited : ")
+                                Button {
+                                    favorited.toggle()
+                                    if favorited {
+                                        favoritedList.append(mealId)
+                                    } else {
+                                        favoritedList.removeAll {$0 == mealId}
+                                    }
+                                    UserDefaults.standard.setValue(favoritedList.joined(separator: ","), forKey: "favorite")
+                                } label: {
+                                    Image(systemName: favorited ? "star.fill" : "star")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .foregroundStyle(.red)
+                                }
+
+                            }
                             Text("Instructions".capitalized)
                                 .font(.title)
                                 .bold()
@@ -64,6 +84,6 @@ struct MealDetailView: View {
 
 #Preview {
     
-    MealDetailView(mealId: "52961")
+    MealDetailView(favoritedList: .constant([]), mealId: "52961")
     
 }
